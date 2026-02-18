@@ -52,18 +52,15 @@ class LinkedList {
       let currentNode = this.headNode;
       while (currentNode.nextNode) {
         currentNode = currentNode.nextNode;
-        if (currentNode.nextNode === null) {
-          const lastNode = currentNode;
-          return lastNode.value;
-        }
       }
+      return currentNode.value;
     }
   }
 
   at(index) {
     if (index < 0 || index >= this.currentSize) return undefined;
 
-    let current = this.head;
+    let current = this.headNode;
     let count = 0;
 
     while (current) {
